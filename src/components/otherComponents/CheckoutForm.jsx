@@ -32,7 +32,7 @@ const CheckoutForm = ({ totalAmount }) => {
 
         try {
             // Step 1: Request a Payment Intent Client Secret from the backend
-            const response = await fetch("http://localhost:7000/api/payment/create-payment-intent", {
+            const response = await fetch("https://freshcart-backend-j35s.onrender.com/api/payment/create-payment-intent", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ amount: totalAmount }),
@@ -76,7 +76,7 @@ const CheckoutForm = ({ totalAmount }) => {
                 };
 
                 // Step 4: Write order payload records permanently to database storage
-                const orderResponse = await fetch("http://localhost:7000/api/orders", { // এন্ডপয়েন্টের শেষে আর বাড়তি কিছু থাকবে না
+                const orderResponse = await fetch("https://freshcart-backend-j35s.onrender.com/api/orders", { // এন্ডপয়েন্টের শেষে আর বাড়তি কিছু থাকবে না
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(orderPayload),

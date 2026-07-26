@@ -16,7 +16,7 @@ const Orders = () => {
         const token = localStorage.getItem("token");
         // Sending vendorEmail to fetch filtered orders belonging to this vendor
         const response = await axios.get(
-          `http://localhost:7000/api/orders?vendorEmail=${user.email}`,
+          `https://freshcart-backend-j35s.onrender.com/api/orders?vendorEmail=${user.email}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -37,7 +37,7 @@ const Orders = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.patch(
-        `http://localhost:7000/api/orders/${orderId}/status`,
+        `https://freshcart-backend-j35s.onrender.com/api/orders/${orderId}/status`,
         { status: newStatus },
         {
           headers: { Authorization: `Bearer ${token}` },

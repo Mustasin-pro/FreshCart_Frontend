@@ -39,7 +39,7 @@ const AuthProvider = ({ children }) => {
             const firebaseUser = result.user;
 
             const response = await axios.post(
-                "http://localhost:7000/auth/google-signin",
+                "https://freshcart-backend-j35s.onrender.com/auth/google-signin",
                 {
                     username: firebaseUser.displayName,
                     email: firebaseUser.email,

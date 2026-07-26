@@ -9,7 +9,7 @@ const Orders = () => {
     const token = localStorage.getItem("token");
     // Fetching all orders globally for admin view
     axios
-      .get("http://localhost:7000/api/orders", {
+      .get("https://freshcart-backend-j35s.onrender.com/api/orders", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -26,7 +26,7 @@ const Orders = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.patch(
-        `http://localhost:7000/api/orders/${orderId}/status`,
+        `https://freshcart-backend-j35s.onrender.com/api/orders/${orderId}/status`,
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );

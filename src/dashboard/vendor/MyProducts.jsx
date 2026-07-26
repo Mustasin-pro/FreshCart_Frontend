@@ -15,7 +15,7 @@ const MyProducts = () => {
         setLoading(true);
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          `http://localhost:7000/api/foods?email=${user.email}`,
+          `https://freshcart-backend-j35s.onrender.com/api/foods?email=${user.email}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -36,7 +36,7 @@ const MyProducts = () => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:7000/api/foods/${id}`, {
+      await axios.delete(`https://freshcart-backend-j35s.onrender.com/api/foods/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setProducts(products.filter((product) => product._id !== id));

@@ -42,7 +42,7 @@ const Register = () => {
             if (image) formData.append("profileImage", image);
 
             // ৩. ব্যাকএন্ড API কল (JWT টোকেনসহ রেসপন্স আসবে)
-            const response = await axios.post("http://localhost:7000/auth/register", formData);
+            const response = await axios.post("https://freshcart-backend-j35s.onrender.com/auth/register", formData);
 
             if (response.data.success) {
                 // ৪. JWT টোকেন ব্রাউজারে সেভ করা (গুরুত্বপূর্ণ)

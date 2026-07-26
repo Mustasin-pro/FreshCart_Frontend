@@ -7,14 +7,14 @@ const Products = () => {
     const [pendingProducts, setPendingProducts] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:7000/api/vendor-admin/pending")
+        axios.get("https://freshcart-backend-j35s.onrender.com/api/vendor-admin/pending")
             .then(res => setPendingProducts(res.data))
             .catch(err => console.error(err));
     }, []);
 
     const handleAction = async (id, actionStatus) => {
         try {
-            const res = await axios.patch(`http://localhost:7000/api/vendor-admin/approve/${id}`, { status: actionStatus });
+            const res = await axios.patch(`https://freshcart-backend-j35s.onrender.com/api/vendor-admin/approve/${id}`, { status: actionStatus });
             if (res.data.success) {
                 alert(`Product request ${actionStatus}!`);
                 setPendingProducts(pendingProducts.filter(item => item._id !== id));

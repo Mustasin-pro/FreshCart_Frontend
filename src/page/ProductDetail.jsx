@@ -11,7 +11,7 @@ const ProductDetail = () => {
   const { addToCart } = useContext(CartContext); 
 
   useEffect(() => {
-    fetch(`http://localhost:7000/api/foods/${id}`)
+    fetch(`https://freshcart-backend-j35s.onrender.com/api/foods/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);

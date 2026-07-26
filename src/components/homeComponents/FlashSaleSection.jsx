@@ -6,7 +6,7 @@ const FlashSaleSection = () => {
   const [flashProducts, setFlashProducts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:7000/api/foods')
+    axios.get('https://freshcart-backend-j35s.onrender.com/api/foods')
       .then(res => {
         const activeDeals = res.data.filter(product => 
           product.isFlashSale && new Date(product.saleEndDate) > new Date()

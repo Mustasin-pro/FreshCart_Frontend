@@ -12,7 +12,7 @@ const Search = () => {
   useEffect(() => {
     if (query) {
       setLoading(true);
-      fetch(`http://localhost:7000/api/foods/search?query=${query}`)
+      fetch(`https://freshcart-backend-j35s.onrender.com/api/foods/search?query=${query}`)
         .then((res) => res.json())
         .then((data) => {
           setResults(data);

@@ -12,7 +12,7 @@ const OrderHistory = () => {
     if (user?.email) {
       const token = localStorage.getItem("token");
       axios
-        .get(`http://localhost:7000/api/orders?customerEmail=${user.email}`, {
+        .get(`https://freshcart-backend-j35s.onrender.com/api/orders?customerEmail=${user.email}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => {

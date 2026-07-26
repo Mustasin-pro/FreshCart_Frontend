@@ -23,7 +23,7 @@ const Login = () => {
         console.log("Firebase Auth Success:", result.user);
 
         // 2. Fetch JWT Access Token from Backend using only verified email
-        const response = await axios.post("http://localhost:7000/auth/login", {
+        const response = await axios.post("https://freshcart-backend-j35s.onrender.com/auth/login", {
     email,
 });
 

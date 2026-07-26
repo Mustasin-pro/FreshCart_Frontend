@@ -22,7 +22,7 @@ const AddProduct = () => {
 
     useEffect(() => {
         if (user?.email) {
-            axios.get(`http://localhost:7000/api/vendor-admin/vendor/${user.email}`)
+            axios.get(`https://freshcart-backend-j35s.onrender.com/api/vendor-admin/vendor/${user.email}`)
                 .then(res => setMyRequests(res.data))
                 .catch(err => console.error(err));
         }
@@ -49,7 +49,7 @@ const AddProduct = () => {
         };
 
         try {  
-            const res = await axios.post("http://localhost:7000/api/vendor-admin/request", productData);
+            const res = await axios.post("https://freshcart-backend-j35s.onrender.com/api/vendor-admin/request", productData);
             if (res.data.success) {
                 alert(res.data.message);
                 setFormData({

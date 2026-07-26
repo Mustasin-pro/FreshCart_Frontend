@@ -8,7 +8,7 @@ const Foods = () => {
 
     useEffect(() => {
         // Fetching foods from backend API
-        fetch("http://localhost:7000/api/foods")
+        fetch("https://freshcart-backend-j35s.onrender.com/api/foods")
             .then(res => res.json())
             .then(data => setfoods(data))
             .catch(err => console.error("Error fetching foods:", err));

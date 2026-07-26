@@ -8,7 +8,7 @@ const Users = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:7000/api/users", {
+      .get("https://freshcart-backend-j35s.onrender.com/api/users", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -25,7 +25,7 @@ const Users = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.patch(
-        `http://localhost:7000/api/users/${userId}/role`,
+        `https://freshcart-backend-j35s.onrender.com/api/users/${userId}/role`,
         { role: newRole },
         { headers: { Authorization: `Bearer ${token}` } }
       );
